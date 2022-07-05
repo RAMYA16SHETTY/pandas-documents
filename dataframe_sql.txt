@@ -1,0 +1,4 @@
+DataFrames
+1.Write the select statement which gives all the products which costs more than Rs 250.
+prod[prod['cost']>250]
+2.Write the select statement which gives product name, cost, price and profit. (profit formula is price – cost)

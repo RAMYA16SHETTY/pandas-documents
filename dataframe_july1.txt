@@ -1,0 +1,67 @@
+import pandas as pd
+prod=pd.DataFrame([(100,'Marker','Stationary',25,22,'15-Jan-08'),
+                   (101,'Mouse','Computer',450,350,'16-Apr-09'),
+                   (102,'White Board','Stationary',450,375,'20-Aug-10'),
+                   (103,'Sony Vaio','Computer',35000,42000,'21-Sep-10')],
+                  columns=('p_id','P_name','p_family','price','cost','lanch_done'))
+prod
+----------------------
+1.Display product details which are from p_family Stationary
+prod[prod['p_family']=='Stationary']
+
+2.Display product id and name where price more than 10000
+prod[['p_id','P_name']][prod['price']<10000]
+
+3.Display max price in table
+prod[prod['price']==prod['price'].max()]
+
+4.Write the select statement which gives all the products which costs more than Rs 250.
+prod[prod['cost']>250]
+
+5.find the profit of all the product
+prod['profit']==prod['price']-prod['cost']
+prod
+
+6.Find the products which give more profit than product Mouse
+prod[prod['profit']> int (prod['profit'][prod['P_name']=='Mouse'])]
+
+7.Display the products which give the profit greater than 100 Rs
+prod[prod['profit'] > 100]
+
+8.Display the products which are not from Stationary and Computer family.
+prod[~((prod['p_family']=='Stationary')|(prod['p_family']=='Computer'))]
+
+9.Display the products which give more profit than the p_id 102.
+prod[prod['profit']> int (prod['profit'][prod['p_id']==102])]
+
+10.Display product name which has the maximum price in the entire product table.
+prod[prod['price']==prod['price'].max()]
+
+11.List the product name, cost, price, profit and percentage of profit we get in each product
+prod['percentage']=prod['profit']/prod['cost']*100
+prod
+prod[['P_name','price','cost','profit','percentage']]
+
+-------------------------------------
+
+import pandas as pd
+stadium=pd.read_csv("C:\data eng\pandas\demo1.csv")
+stadium
+
+1.find the stadiums which are having seating capactity more than 10000
+stadium[['sta_id ','sta_name']][stadium['sta_capacity']>10000]
+
+2.dispaly stadium name,capacity,city where status is inactive
+stadium[['sta_name','sta_capacity','sta_city']][stadium['sta_status']=='I']
+
+3.display stadium name,capacity with maximum seating capacity
+stadium[['sta_name','sta_capacity']][stadium['sta_capacity']==stadium['sta_capacity'].max()]
+
+4.display minimum seating capacity
+stadium[stadium['sta_capacity']==stadium['sta_capacity'].min()]
+
+5.display stadium name,city where stadium code is TN-CHE-002
+stadium[['sta_name','sta_city']][stadium['sta_code']=='TN-CHE-002']
+
+6.display stadium which are from Bangalore
+stadium[['sta_id ','sta_code','sta_name']][stadium['sta_city']=='Bangalore']

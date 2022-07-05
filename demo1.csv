@@ -1,0 +1,5 @@
+sta_id ,sta_code,sta_name,sta_capacity,sta_type,sta_city,sta_opened_date,sta_status
+1000,KA-BLR-001,Chinnaswamy Stadium,15000,OUTDOOR,Bangalore,10-Feb-69,A
+1001,KA-BLR-002,Kanteerava Stadium,35000,OUTDOOR,Bangalore,15-Aug-74,A
+1002,KA-MYS-001,Mysore Stadium,15000,OUTDOOR,Bangalore,18-Nov-88,A
+1003,TN-CHE-002,Chennai Stadium,10000,INDOOR,Chennai,19-Jun-98,I

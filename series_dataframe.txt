@@ -1,0 +1,200 @@
+Creating series
+import pandas as pd
+ser=pd.Series(data=[10,20,30,40],index=['a','b','c','d'])
+ser
+a    10
+b    20
+c    30
+d    40
+dtype: int64
+
+import pandas as pd
+value=pd.Series(data=[10,20,30,40],index=['Ramya','Madhu','Arun','Yogesh'])
+value
+Ramya     10
+Madhu     20
+Arun      30
+Yogesh    40
+dtype: int64
+-----------------------
+creating series for list
+import pandas as pd
+li=[10,20,30,40]
+ser=pd.Series(li,index=['a','b','c','d'])
+ser
+a    10
+b    20
+c    30
+d    40
+dtype: int64
+
+import pandas as pd
+li=['Ramya','madhu','priya','yogesh']
+ser=pd.Series(li,index=['Mca','Bca','Btech','Mtech'])
+ser
+Mca       Ramya
+Bca       madhu
+Btech     priya
+Mtech    yogesh
+dtype: object
+-------------------------------
+creating series for Tuple
+import pandas as pd
+tup=(10,20,30,40)
+ser=pd.Series(tup,index=['a','b','c','d'])
+ser
+a    10
+b    20
+c    30
+d    40
+dtype: int64
+
+import pandas as pd
+tup=(10,20,30,40)
+ser=pd.Series(tup,index=['apple','mango','berry','orange'])
+ser
+apple     10
+mango     20
+berry     30
+orange    40
+dtype: int64
+---------------------------
+creating series for np array
+import numpy as np
+import pandas as pd
+npa=np.array([10,20,30,40])
+ser=pd.Series(npa,index=['manger','clerk','ass-manger','ceo'])
+ser
+manger        10
+clerk         20
+ass-manger    30
+ceo           40
+dtype: int32
+
+import numpy as np
+import pandas as pd
+npa=np.array(['priya','mohan','ravi','kumar'])
+ser=pd.Series(npa,index=['manger','clerk','ass-manger','ceo'])
+ser
+manger        priya
+clerk         mohan
+ass-manger     ravi
+ceo           kumar
+dtype: object
+--------------------------
+creating series fro dictionary
+import pandas as pd
+dic={'a':10,'b':20,'c':30,'d':40}
+ser=pd.Series(dic)
+ser
+a    10
+b    20
+c    30
+d    40
+dtype: int64
+
+import pandas as pd
+dic={'ramya':10,'arun':20,'madhu':30,'sathish':40}
+ser=pd.Series(dic)
+ser
+ramya      10
+arun       20
+madhu      30
+sathish    40
+dtype: int64
+
+------------------------
+creating DataFrames for values
+import pandas as pd
+df=pd.DataFrame([['ramya',23],['ram',25]],columns=['name','age'],index=['I','II'])
+df
+	name	age
+I	ramya	23
+II	ram	25
+
+import pandas as pd
+df=pd.DataFrame([['orange',10],['mango',20],['apple',30]],columns=['f_name','id'],index=['I','II','III'])
+df
+	f_name	id
+I	orange	10
+II	mango	20
+III	apple	30
+--------------------------
+creating DataFrame for list
+li1=[1,2]
+li2=[3,4]
+li3=[5,6]
+df=pd.DataFrame([li1,li2,li3],columns=['id','val'],index=['I','II','III'])
+df
+	id	val
+I	1	2
+II	3	4
+III	5	6
+
+li1=[1,'madhavi']
+li2=[3,'ravi']
+li3=[5,'Ramya']
+df=pd.DataFrame([li1,li2,li3],columns=['S.No''id','val'],index=['I','II','III'])
+df
+	id	val
+I	1	madhavi
+II	3	ravi
+III	5	Ramya
+--------------------------------
+creating DataFrame for Tuple
+Tp1=(1,2)
+Tp2=(3,4)
+Tp3=(5,6)
+df=pd.DataFrame([Tp1,Tp2,Tp3],columns=['id','val'],index=['I','II','III'])
+df
+	id	val
+I	1	2
+II	3	4
+III	5	6
+
+Tp1=(1,'orange')
+Tp2=(3,'apple')
+Tp3=(5,'mango')
+df=pd.DataFrame([Tp1,Tp2,Tp3],columns=['id','f_name'],index=['I','II','III'])
+df
+	id	f_name
+I	1	orange
+II	3	apple
+III	5	mango
+---------------------------
+creating DataFrame for np
+array1=np.array([1,2])
+array2=np.array([3,4])
+array3=np.array([5,6])
+pd.DataFrame([array1,array2,array3],columns=['id','val'],index=['I','II','III'])
+	id	val
+I	1	2
+II	3	4
+III	5	6
+
+array1=np.array([1,'manger'])
+array2=np.array([2,'ceo'])
+array3=np.array([3,'clerk'])
+pd.DataFrame([array1,array2,array3],columns=['id','val'],index=['I','II','III'])
+
+id	val
+I	1	manger
+II	2	ceo
+III	3	clerk
+---------------------------
+creating DataFrame for dictionary
+dic={'id':[1,2,3],'name':['adi','harini','jeshu']}
+df=pd.DataFrame(dic)
+df
+	id	name
+0	1	adi
+1	2	harini
+2	3	jeshu
+
+dic={'id':[10,20,30],'name':['Chennai','Bangalore','pune']}
+df=pd.DataFrame(dic)
+df
+	id	name
+0	10	Chennai
+1	20	Bangalore
+2	30	pune

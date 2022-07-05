@@ -1,0 +1,75 @@
+Read csv file
+import pandas as pd
+red=pd.read_csv(r"C:\data eng\pandas\skill.csv")
+red
+
+	s.no	Name	Skill	Rating	Experience
+0	1	Ramya	SQL	7.1	3Years
+1	2	Madhu	Python	8.1	2Years
+2	3	Sathish	Java	7.0	1.5Years
+3	4	Harini	C#	7.5	3.5Years
+
+-------------------
+POP
+red.pop("s.no")
+0    1
+1    2
+2    3
+3    4
+
+red.pop('Rating')
+0    7.1
+1    8.1
+2    7.0
+3    7.5
+Name: Rating, dtype: float64
+​
+---------------------
+DROP
+red.drop(["Skill"],axis=1)
+	s.no	Name	Experience
+0	1	Ramya	3Years
+1	2	Madhu	2Years
+2	3	Sathish	1.5Years
+3	4	Harini	3.5Years
+
+--------------------
+drop and pop with dataframe
+dic=pd.DataFrame([(1,'orange','friut','orange'),
+                  (2,'beens','vegetable','green'),
+                  (3,'Apple','friut','Red'),
+                  (4,'Mango','fruit','yellow')],
+                columns=('Id','Name','Type','colour'))
+dic
+	Id	Name	Type	colour
+0	1	orange	friut	orange
+1	2	beens	vegetable	green
+2	3	Apple	friut	Red
+3	4	Mango	fruit	yellow
+-----------------------------
+POP
+dic.pop("Type")
+0        friut
+1    vegetable
+2        friut
+3        fruit
+Name: Type, dtype: object
+
+dic
+Id	Name	colour
+0	1	orange	orange
+1	2	beens	green
+2	3	Apple	Red
+3	4	Mango	yellow
+-----------------------
+DROP
+dic.drop("colour",axis=1)
+	Id	Name
+0	1	orange
+1	2	beens
+2	3	Apple
+3	4	Mango
+
+
+
+
